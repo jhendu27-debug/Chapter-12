@@ -2,6 +2,12 @@
 
 My plan is to create a Spell class that stores the name, power level, and school of magic for each spell. I will use an ArrayList to hold all the spell objects. Then I will use Java Streams to filter spells by school, sort them by power level, and get the names of the strongest spells.
 
-# ournal Prompt
+# journal Prompt
 
 The most confusing part is understanding how the Stream pipeline works. I am not completely sure how all the steps connect, but I plan to build it one phase at a time.
+
+# Phase 1
+
+I created the Spell class with a name, power level, and school. I also added 10 spells to an ArrayList and printed them to the console.
+
+A class is the blueprint that describes an object. An object is an actual instance created from that class with its own information.

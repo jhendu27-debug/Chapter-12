@@ -19,3 +19,7 @@ I used the stream and filter methods to find only Necromancy spells. The filter 
 # Phase 3
 
 I added the sorted method to rank the spells by power level. I used Integer.compare to put the strongest spells first. Intermediate operations like filter and sorted prepare the data, while a terminal operation like collect finishes the pipeline.
+
+# Phase 4
+
+My pipeline starts with the ArrayList of spells. The filter keeps only Necromancy spells, sorted puts them in power order, map extracts their names, and limit keeps the top three. Collect puts the results into a new list of Strings.

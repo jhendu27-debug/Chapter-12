@@ -21,17 +21,19 @@ public class Main {
 
         String chosenSchool = "Necromancy";
 
-        List<Spell> filteredSpells = spells.stream()
+        List<String> topSpells = spells.stream()
                 .filter(spell -> spell.getSchool().equals(chosenSchool))
                 .sorted((spell1, spell2) ->
                         Integer.compare(spell2.getPowerLevel(),
                                 spell1.getPowerLevel()))
+                .map(Spell::getName)
+                .limit(3)
                 .collect(Collectors.toList());
 
-        System.out.println("=== Spells Ranked By Power ===");
+        System.out.println("=== Top 3 Most Powerful Necromancy Spells ===");
 
-        for (Spell spell : filteredSpells) {
-            System.out.println(spell);
+        for (String spellName : topSpells) {
+            System.out.println(spellName);
         }
     }
 }

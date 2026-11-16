@@ -23,9 +23,12 @@ public class Main {
 
         List<Spell> filteredSpells = spells.stream()
                 .filter(spell -> spell.getSchool().equals(chosenSchool))
+                .sorted((spell1, spell2) ->
+                        Integer.compare(spell2.getPowerLevel(),
+                                spell1.getPowerLevel()))
                 .collect(Collectors.toList());
 
-        System.out.println("=== Filtered Spells ===");
+        System.out.println("=== Spells Ranked By Power ===");
 
         for (Spell spell : filteredSpells) {
             System.out.println(spell);

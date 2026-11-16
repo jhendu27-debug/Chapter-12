@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,9 +19,15 @@ public class Main {
         spells.add(new Spell("Phantom Double", 55, "Illusion"));
         spells.add(new Spell("Death Grasp", 98, "Necromancy"));
 
-        System.out.println("=== Intergalactic Spell Archive ===");
+        String chosenSchool = "Necromancy";
 
-        for (Spell spell : spells) {
+        List<Spell> filteredSpells = spells.stream()
+                .filter(spell -> spell.getSchool().equals(chosenSchool))
+                .collect(Collectors.toList());
+
+        System.out.println("=== Filtered Spells ===");
+
+        for (Spell spell : filteredSpells) {
             System.out.println(spell);
         }
     }

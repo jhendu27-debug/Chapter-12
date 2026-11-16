@@ -11,3 +11,8 @@ The most confusing part is understanding how the Stream pipeline works. I am not
 I created the Spell class with a name, power level, and school. I also added 10 spells to an ArrayList and printed them to the console.
 
 A class is the blueprint that describes an object. An object is an actual instance created from that class with its own information.
+
+# Phase 2
+
+I used the stream and filter methods to find only Necromancy spells. The filter checks each spell's school and keeps the ones that match. The lambda expression tells the filter what condition to check.
+

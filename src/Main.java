@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +18,25 @@ public class Main {
         spells.add(new Spell("Phantom Double", 55, "Illusion"));
         spells.add(new Spell("Death Grasp", 98, "Necromancy"));
 
-        String chosenSchool = "Necromancy";
+        // Test 1: Equal power levels
+        spells.add(new Spell("Spirit Shield", 90, "Abjuration"));
+        spells.add(new Spell("Magic Barrier", 90, "Abjuration"));
+
+        System.out.println("=== Intergalactic Spell Archive ===");
+
+        // Test different schools
+        testSchool(spells, "Necromancy");
+        testSchool(spells, "Evocation");
+        testSchool(spells, "Illusion");
+
+        // Test a school with no matching spells
+        testSchool(spells, "Conjuration");
+
+        // Test equal power levels
+        testSchool(spells, "Abjuration");
+    }
+
+    public static void testSchool(ArrayList<Spell> spells, String chosenSchool) {
 
         List<String> topSpells = spells.stream()
                 .filter(spell -> spell.getSchool().equals(chosenSchool))
@@ -30,10 +47,14 @@ public class Main {
                 .limit(3)
                 .collect(Collectors.toList());
 
-        System.out.println("=== Top 3 Most Powerful Necromancy Spells ===");
+        System.out.println("\nTop spells for " + chosenSchool + ":");
 
-        for (String spellName : topSpells) {
-            System.out.println(spellName);
+        if (topSpells.isEmpty()) {
+            System.out.println("No spells found.");
+        } else {
+            for (String spellName : topSpells) {
+                System.out.println(spellName);
+            }
         }
     }
 }

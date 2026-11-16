@@ -23,3 +23,7 @@ I added the sorted method to rank the spells by power level. I used Integer.comp
 # Phase 4
 
 My pipeline starts with the ArrayList of spells. The filter keeps only Necromancy spells, sorted puts them in power order, map extracts their names, and limit keeps the top three. Collect puts the results into a new list of Strings.
+
+# Phase 5
+
+I tested the program with different schools of magic. The filters worked correctly, including when I searched for a school that had no spells. I also tested spells with equal power levels to make sure the sorting worked correctly. Everything worked as expected.
